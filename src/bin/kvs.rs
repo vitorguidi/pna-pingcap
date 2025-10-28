@@ -1,4 +1,5 @@
 use clap::{Arg, ArgAction, Command};
+use std::process::exit;
 
 fn main() {
     let matches = Command::new("kvs")
@@ -51,20 +52,23 @@ fn main() {
 
     match matches.subcommand() {
         Some(("set", matches)) => {
-            dbg!(matches);
-            let key: Option<&String> = matches.get_one("key");
-            let value: Option<&String> = matches.get_one("value");
-            println!("Setting key: {}, value: {}", key.unwrap(), value.unwrap());
+            eprintln!("unimplemented");
+            exit(1);
+            // let key: Option<&String> = matches.get_one("key");
+            // let value: Option<&String> = matches.get_one("value");
+            // println!("Setting key: {}, value: {}", key.unwrap(), value.unwrap());
         },
         Some(("get", matches)) => {
-            dbg!(matches);
-            let key: Option<&String> = matches.get_one("key");
-            println!("Getting key: {}", key.unwrap());
+            eprintln!("unimplemented");
+            exit(1);
+            // let key: Option<&String> = matches.get_one("key");
+            // println!("Getting key: {}", key.unwrap());
         },
         Some(("rm", matches)) => {
-            dbg!(matches);
-            let key: Option<&String> = matches.get_one("key");
-            println!("Removing key: {}", key.unwrap());            
+            eprintln!("unimplemented");
+            exit(1);
+            // let key: Option<&String> = matches.get_one("key");
+            // println!("Removing key: {}", key.unwrap());            
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachable
     }
