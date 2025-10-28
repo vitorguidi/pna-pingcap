@@ -1,6 +1,13 @@
 [package]
-name = "pna-pingcap"
+name = "kvs"
 version = "0.1.0"
-edition = "2024"
+authors = ["Vitor Guidi"]
+description = "A key-value store"
+edition = "2018"
+
+[dev-dependencies]
+assert_cmd = "0.11.0"
+predicates = "1.0.0"
 
 [dependencies]
+clap = "4.5.50"
