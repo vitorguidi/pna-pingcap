@@ -17,5 +17,3 @@ impl KvStore {
         todo!();
     }
 }
-
-fn main() {}
