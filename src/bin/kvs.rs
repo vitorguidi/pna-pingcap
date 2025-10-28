@@ -18,11 +18,7 @@ fn main() {
                         .required(true)
                         .index(1),
                 )
-                .arg(
-                    Arg::new("value")
-                        .require_equals(true)
-                        .index(2)
-                ),
+                .arg(Arg::new("value").require_equals(true).index(2)),
         )
         .subcommand(
             Command::new("get")
@@ -34,7 +30,7 @@ fn main() {
                         .action(ArgAction::Set)
                         .required(true)
                         .index(1),
-                )
+                ),
         )
         .subcommand(
             Command::new("rm")
@@ -46,29 +42,29 @@ fn main() {
                         .action(ArgAction::Set)
                         .required(true)
                         .index(1),
-                )
+                ),
         )
         .get_matches();
 
     match matches.subcommand() {
-        Some(("set", matches)) => {
+        Some(("set", _matches)) => {
             eprintln!("unimplemented");
             exit(1);
-            // let key: Option<&String> = matches.get_one("key");
-            // let value: Option<&String> = matches.get_one("value");
+            // let key: Option<&String> = _matches.get_one("key");
+            // let value: Option<&String> = _matches.get_one("value");
             // println!("Setting key: {}, value: {}", key.unwrap(), value.unwrap());
-        },
-        Some(("get", matches)) => {
+        }
+        Some(("get", _matches)) => {
             eprintln!("unimplemented");
             exit(1);
-            // let key: Option<&String> = matches.get_one("key");
+            // let key: Option<&String> = _matches.get_one("key");
             // println!("Getting key: {}", key.unwrap());
-        },
-        Some(("rm", matches)) => {
+        }
+        Some(("rm", _matches)) => {
             eprintln!("unimplemented");
             exit(1);
-            // let key: Option<&String> = matches.get_one("key");
-            // println!("Removing key: {}", key.unwrap());            
+            // let key: Option<&String> = _matches.get_one("key");
+            // println!("Removing key: {}", key.unwrap());
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachable
     }

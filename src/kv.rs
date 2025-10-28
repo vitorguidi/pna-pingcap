@@ -13,14 +13,18 @@ use std::collections::HashMap;
 /// let val = store.get("key".to_owned());
 /// assert_eq!(val, Some("value".to_owned()));
 /// ```
+
+#[derive(Default)]
 pub struct KvStore {
     /// Creates a `KvStore`.
-    store: HashMap<String, String>
+    store: HashMap<String, String>,
 }
 
 impl KvStore {
     pub fn new() -> KvStore {
-        KvStore { store: HashMap::new() }
+        KvStore {
+            store: HashMap::new(),
+        }
     }
 
     /// Sets the value of a string key to a string.
