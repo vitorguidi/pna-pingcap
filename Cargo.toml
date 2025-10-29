@@ -8,6 +8,11 @@ edition = "2018"
 [dev-dependencies]
 assert_cmd = "0.11.0"
 predicates = "1.0.0"
+tempfile = "3.0.7"
+walkdir = "2.2.7"
 
 [dependencies]
 clap = "4.5.50"
+serde_json = "1.0.145"
+serde = { version = "1.0.89", features = ["derive"] }
+thiserror = "1.0"
