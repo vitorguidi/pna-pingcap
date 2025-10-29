@@ -45,8 +45,9 @@ impl KvStore {
     }
 
     /// Remove a given key.
-    pub fn remove(&mut self, key: String) {
+    pub fn remove(&mut self, key: String) -> Result<()> {
         self.store.remove(&key);
+        Ok(())
     }
 
     pub fn open(path: impl Into<PathBuf>) -> Result<KvStore> {
